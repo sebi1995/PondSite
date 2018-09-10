@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+    <!--<div>-->
+        <!--<h3>data</h3>-->
+        <!--<table>-->
+            <!--<thead>-->
+            <!--<tr>-->
+                <!--<th>Id</th>-->
+                <!--<th>Pond name</th>-->
+                <!--<th>Image</th>-->
+            <!--</tr>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+            <!--<tr th:each="pond : ${pondList}">-->
+                <!--<td th:text="${pond.id}"></td>-->
+                <!--<td th:text="${pond.pond_name}"></td>-->
+                <!--<td th:each="image : ${pond.pond_images}">-->
+                    <!--<p th:text="${image.image_content}"></p>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--</tbody>-->
+        <!--</table>-->
+    <!--</div>-->
+
+    <img src="../static/images/dasssss/Screenshot.png"/>
+    <img th:src="@{Screenshot.png}"/> <!-- e in acelas folder ca index.......-->
+    <img th:src="@{/static/images/dasssss/Screenshot.png}"/>
+    <img th:src="@{/static/images/dasssss/Screenshot.png}"/>
+    <img th:src="@{../static/images/dasssss/Screenshot.png}"/>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+create the security XML
+<intercept-url pattern="/**" access="permitAll" />
+https://docs.spring.io/spring-security/site/docs/current/guides/html5/helloworld-xml.html
+
+workaround
+spring.security.user.name=123
+spring.security.user.password=123

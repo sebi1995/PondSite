@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+All ponds
+<th:block>
+    <table>
+        <tr>
+            <td>Pond name</td>
+            <td>Pond visits</td>
+        </tr>
+        <div th:each="pond : ${pondList}">
+            <tr>
+                <td th:text="*{pond.pond_name}"></td>
+                <td th:text="*{pond.pond_visits}"></td>
+            </tr>
+        </div>
+    </table>
+</th:block>
+</body>
+</html>
