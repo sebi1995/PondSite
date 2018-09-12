@@ -5,6 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface SiteUpdateRepository extends CrudRepository<SiteUpdate, Integer> {
+public interface UpdateRepository extends CrudRepository<SiteUpdate, Integer> {
 
 }
