@@ -1,38 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Title</title>
+    <title th:text="${page_title}">Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/stylesheet.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/nav.css}"/>
 </head>
 <body>
 
-    <!--<div>-->
-        <!--<h3>data</h3>-->
-        <!--<table>-->
-            <!--<thead>-->
-            <!--<tr>-->
-                <!--<th>Id</th>-->
-                <!--<th>Pond name</th>-->
-                <!--<th>Image</th>-->
-            <!--</tr>-->
-            <!--</thead>-->
-            <!--<tbody>-->
-            <!--<tr th:each="pond : ${pondList}">-->
-                <!--<td th:text="${pond.id}"></td>-->
-                <!--<td th:text="${pond.pond_name}"></td>-->
-                <!--<td th:each="image : ${pond.pond_images}">-->
-                    <!--<p th:text="${image.image_content}"></p>-->
-                <!--</td>-->
-            <!--</tr>-->
-            <!--</tbody>-->
-        <!--</table>-->
-    <!--</div>-->
+<div id="page-top">
+    <div id="page-top-title-wrapper">
+        <div id="page-top-signed-in-as">
+            signed in as
+        </div>
+        <div id="page-top-title" th:text="${page_title}">
+            page title
+        </div>
+    </div>
+    <div class="page-breaker-span"></div>
+    <nav id="page-nav">
+        <ul>
+            <li><a th:href="@{/}"><span id="nav-span-is-selected"><b>Home</b></span></a></li>
+            <li><a th:href="@{/about}"><span><b>About</b></span></a></li>
+            <li><a th:href="@{/ponds}"><span><b>Ponds</b></span></a></li>
+            <li><a th:href="@{/contact}"><span><b>Contact</b></span></a></li>
+        </ul>
+    </nav>
+</div>
+<div class="page-breaker-span" style="width: 90%;"></div>
 
-    <img src="../static/images/dasssss/Screenshot.png"/>
-    <img th:src="@{Screenshot.png}"/> <!-- e in acelas folder ca index.......-->
-    <img th:src="@{/static/images/dasssss/Screenshot.png}"/>
-    <img th:src="@{/static/images/dasssss/Screenshot.png}"/>
-    <img th:src="@{../static/images/dasssss/Screenshot.png}"/>
+<div id="page-body">
+    <div>daw</div>
+</div>
+
+<div class="page-breaker-span" style="width: 90%;"></div>
+<footer id="page-footer">
+    this is the footer
+</footer>
+
 
 </body>
 </html>

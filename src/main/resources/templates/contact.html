@@ -22,18 +22,15 @@
         <ul>
             <li><a th:href="@{/}"><span><b>Home</b></span></a></li>
             <li><a th:href="@{/about}"><span><b>About</b></span></a></li>
-            <li><a th:href="@{/ponds}"><span id="nav-span-is-selected"><b>Ponds</b></span></a></li>
-            <li><a th:href="@{/contact}"><span><b>Contact</b></span></a></li>
+            <li><a th:href="@{/ponds}"><span><b>Ponds</b></span></a></li>
+            <li><a th:href="@{/contact}"><span id="nav-span-is-selected"><b>Contact</b></span></a></li>
         </ul>
     </nav>
 </div>
 <div class="page-breaker-span" style="width: 90%;"></div>
 
 <div id="page-body">
-    <ul th:unless="${image_list.isEmpty() || image_list == null}" class="ponds-images-ul"
-        th:each="image : ${image_list}">
-        <li th:text="${image.id} + ' ' +  ${image.imagePath}"></li>
-    </ul>
+    <div>daw</div>
 </div>
 
 <footer id="page-footer">

@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Comic Sans MS", sans-serif;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(5, 7, 206, 0.47);
+}
+
+#page-top {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#page-top-title-wrapper {
+    display: block;
+    background: #ececec;
+    height: fit-content;
+    width: 100%;
+
+}
+
+#page-top-title-wrapper > #page-top-signed-in-as {
+    display: block;
+    text-align: right;
+    padding-right: 10px;
+}
+
+#page-top-title-wrapper > #page-top-title {
+    display: block;
+    font-size: 50px;
+    margin: 0 0 10px 10px;
+}
+
+#page-body {
+    width: calc(90% - 20px);
+    background: #ececec;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+#page-footer {
+    margin: 0 auto;
+    height: 80px;
+    background: #cecece;
+    padding: 10px;
+    width: calc(90% - 20px);
+}
+
+.page-breaker-span {
+    height: 4px;
+    margin: 0 auto;
+    background: #cecece;
+    width: 100%;
+}

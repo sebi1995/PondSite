@@ -1,18 +1,19 @@
 package com.sebastian.PondSite.services;
 
-import com.sebastian.PondSite.entities.Pond;
 import com.sebastian.PondSite.entities.User;
 import com.sebastian.PondSite.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+//import org.springframework.security.core.userdetails.UserDetails;
+//import org.springframework.security.core.userdetails.UserDetailsService;
+//import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
 @Service
-public class UserService  implements UserDetailsService {
+public class UserService   {
+//implements UserDetailsService
 
     @Autowired
     private UserRepository userRepository;
@@ -37,10 +38,10 @@ public class UserService  implements UserDetailsService {
         userRepository.delete(user);
     }
 
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return userRepository.findByUsername(username);
-    }
+//    @Override
+//    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+//        return userRepository.findByUsername(username);
+//    }
 
 
 }

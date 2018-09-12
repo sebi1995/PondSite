@@ -1,0 +1,29 @@
+//{path variable} is a variable passed through the url
+//hu = hide unhide
+@GetMapping(value = "/hu/{id}")
+public String hideUnhideUpdate(@PathVariable Integer id, Model model) {
+    SiteUpdate update = siteUpdateService.getUpdateById(id);
+    update.setIsHidden((update.getIsHidden() == 0) ? 1 : 0);
+    siteUpdateService.updateUpdate(update);
+    model.addAttribute("updates_list", siteUpdateService.getAllUpdates());
+    model.addAttribute("filtered_list", siteUpdateService.getAllUpdatesFiltered());
+    model.addAttribute("newUpdate", new SiteUpdate());
+    return "index";
+}
+
+<div th:unless="${updates_list.isEmpty()}" class="table-conf">
+    <div th:each="update : ${updates_list}">
+        <span th:text="${update.id}"></span>
+        <span th:text="${update.updateText}"></span>
+        <span th:text="${update.date}"></span>
+        <span>
+            <span th:if="${update.isHidden == 0}" th:text="Visible"></span>
+            <span th:unless="${update.isHidden == 0}" th:text="Hidden"></span>
+        </span>
+        <span>
+            <a th:if="${update.isHidden == 0}" th:href="@{'/hu/' + ${update.id}}">Hide</a>
+            <a th:unless="${update.isHidden == 0}" th:href="@{'/hu/' + ${update.id}}">Unhide</a>
+        </span>
+
+    </div>
+</div>

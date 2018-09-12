@@ -1,0 +1,14 @@
+<h3>Updates</h3>
+<!--if statement where is the list is empty, text out there are no update-->
+<div th:if="${filtered_list.isEmpty()}" th:text="'There are no updates?'">aa</div>
+<!--else statement, where is the list is not empty, foreach the list for data inside-->
+<table th:unless="${filtered_list.isEmpty()}" class="table-conf">
+    <tr>
+        <th>Update</th>
+        <th>Update date</th>
+    </tr>
+    <tr th:each="update : ${filtered_list}">
+        <td th:text="${update.updateText}">Update text</td>
+        <td th:text="${update.date}">Date</td>
+    </tr>
+</table>

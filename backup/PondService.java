@@ -1,6 +1,6 @@
 package com.sebastian.PondSite.services;
 
-import com.sebastian.PondSite.entities.Image;
+import com.sebastian.PondSite.entities.PondImage;
 import com.sebastian.PondSite.entities.Pond;
 import com.sebastian.PondSite.repositories.PondRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +14,8 @@ public class PondService {
     @Autowired
     private PondRepository pondRepository;
 
-    public Pond createPond(Pond pond, List<Image> images) {
-        pond.setPond_images(images);
+    public Pond createPond(Pond pond, List<PondImage> pondImages) {
+        pond.setPond_images(pondImages);
         return pondRepository.save(pond);
     }
 

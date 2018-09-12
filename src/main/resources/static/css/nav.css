@@ -1,0 +1,43 @@
+/*#page-nav ul li a span {*/
+/**/
+/*}*/
+
+#page-nav {
+    width: 100%;
+}
+
+#page-nav ul {
+    list-style: none;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 0;
+}
+
+#page-nav ul li {
+    min-width: 120px;
+    width: 25%;
+    font-size: 25px;
+    display: inline-block;
+}
+
+#page-nav ul li a {
+    background: #ececec;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+
+#page-nav ul li a:hover {
+    color: rgba(5, 7, 206, 0.47);
+    background-color: #cecece;
+}
+#page-nav ul li a span {
+    display: block;
+    padding: 10px;
+}
+#page-nav ul li a #nav-span-is-selected {
+    background: #cecece;
+    color: rgba(5, 7, 206, 0.47);
+
+}

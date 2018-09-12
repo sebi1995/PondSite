@@ -1,0 +1,12 @@
+@PostMapping("/deleteAll")
+public String deleteAll(Model model) {
+    siteUpdateService.deleteAllUpdates();
+    model.addAttribute("updates_list", siteUpdateService.getAllUpdates());
+    model.addAttribute("filtered_list", siteUpdateService.getAllUpdatesFiltered());
+    model.addAttribute("newUpdate", new SiteUpdate());
+    return "index";
+}
+
+<form action="#" th:action="@{/deleteAll}" method="post">
+    <input type="submit" value="Delete all"/>
+</form>
