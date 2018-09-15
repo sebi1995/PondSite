@@ -25,6 +25,9 @@
         <div id="page-top-title" th:text="${page_title}">
             page title
         </div>
+        <div id="page-top-title-underscore">
+            <a th:href="@{/}"></a>
+        </div>
     </div>
     <div class="page-breaker-span"></div>
     <nav id="page-nav">
@@ -39,16 +42,13 @@
 <div class="page-breaker-span" style="width: 90%;"></div>
 
 <div id="page-body">
-    <ul th:unless="${image_list.isEmpty() || image_list == null}" class="ponds-images-ul"
-        th:each="image : ${image_list}">
-        <li th:text="${image.id} + ' ' +  ${image.imagePath}"></li>
-    </ul>
+
+    body
+
 </div>
 
-<footer id="page-footer">
-    this is the footer
-</footer>
-
+<div class="page-breaker-span" style="width: 90%;"></div>
+<footer id="page-footer" th:replace="fragments/standard-fragment.html :: page-footer-fragment"></footer>
 
 </body>
 </html>

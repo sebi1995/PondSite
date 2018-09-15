@@ -31,7 +31,7 @@ public class NewsService {
         newsRepository.deleteAll();
     }
 
-    public void newsNews(News news) {
+    public void updateNews(News news) {
         newsRepository.save(news);
     }
 

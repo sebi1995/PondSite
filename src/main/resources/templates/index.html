@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:include="fragments/standard-fragment.html :: page-head-fragment">
+<head th:insert="fragments/standard-fragment.html :: page-head-fragment">
     <title th:text="${page_title}">Title</title>
 </head>
 <body>
@@ -25,6 +25,9 @@
         <div id="page-top-title" th:text="${page_title}">
             page title
         </div>
+        <div id="page-top-title-underscore">
+            <a th:href="@{/}"></a>
+        </div>
     </div>
     <div class="page-breaker-span"></div>
     <nav id="page-nav">
@@ -40,8 +43,7 @@
 
 <div id="page-body">
 
-
-
+    body
 
 </div>
 

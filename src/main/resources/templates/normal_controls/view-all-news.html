@@ -9,14 +9,14 @@
     <div id="page-top-title-wrapper">
         <div id="page-top-signed-in-as">
             <div class="dropdown">
-                <button class="dropbtn" th:text="(${current_user == null} ? 'Welcome visitor!' : ${current_user.username})">
+                <button class="dropbtn"
+                        th:text="(${current_user == null} ? 'Welcome visitor!' : ${current_user.username})">
                     Dropdown
                 </button>
                 <div class="dropdown-content">
                     <a th:if="${current_user == null}" th:href="@{/login}">Login</a>
                     <a th:if="${current_user == null}" th:href="@{/register}">Register</a>
-                    <a th:if="${current_user != null}" th:href="@{/myaccount}">Account
-                        settings</a>
+                    <a th:if="${current_user != null}" th:href="@{/myaccount}">Account settings</a>
                     <a th:if="${current_user != null}" th:href="@{/myponds}">My ponds</a>
                     <a th:if="${current_user != null}" th:href="@{/logout}">Log out</a>
                 </div>
@@ -24,6 +24,9 @@
         </div>
         <div id="page-top-title" th:text="${page_title}">
             page title
+        </div>
+        <div id="page-top-title-underscore">
+            <a th:href="@{/}"></a>
         </div>
     </div>
     <div class="page-breaker-span"></div>
@@ -37,7 +40,7 @@
         <div class="my-container" th:each="news : ${news_list}" th:if="${news.isHidden == 0}">
             <div class="my-container-update" th:text="${news.updateText}">
             </div>
-            <a class="my-container-update-read-more" th:href="@{'/news/' + ${news.id}}" >Continue reading...</a>
+            <a class="my-container-update-read-more" th:href="@{'/news/' + ${news.id}}">Continue reading...</a>
             <div class="page-breaker-span"></div>
             <div class="my-container-update-date" th:text="${news.date}">
                 test date

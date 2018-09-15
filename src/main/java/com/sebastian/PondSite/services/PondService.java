@@ -13,23 +13,27 @@ public class PondService {
     @Autowired
     private PondRepository pondRepository;
 
-    public Pond getPondById(Integer id){
-        return pondRepository.findById(id).get();
+    public List<Pond> getAllPond() {
+        return pondRepository.findAll();
     }
 
-    public List<Pond> getAllPonds(){
-        return (List<Pond>) pondRepository.findAll();
+    public void createNewPond(Pond pond) {
+        pondRepository.save(pond);
     }
 
-    public Pond newPond(Pond pond){
-        return pondRepository.save(pond);
-    }
-
-    public void deletePond(Pond pond){
+    public void deletePond(Pond pond) {
         pondRepository.delete(pond);
     }
 
-    public Pond updatePond(Pond pond){
-        return pondRepository.save(pond);
+    public void deleteAllPond() {
+        pondRepository.deleteAll();
+    }
+
+    public void updatePond(Pond pond) {
+        pondRepository.save(pond);
+    }
+
+    public Pond getPondById(Integer id) {
+        return pondRepository.findById(id).get();
     }
 }
