@@ -17,6 +17,9 @@ public class PondsController {
 
     @GetMapping("/ponds")
     public String getPondsPage(Model model){
+
+        
+
         model.addAttribute("page_title", "Ponds");
         model.addAttribute("image_list", imageService.getAllImages());
         model.addAttribute("current_user", new User());

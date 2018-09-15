@@ -9,16 +9,16 @@
     <div id="page-top-title-wrapper">
         <div id="page-top-signed-in-as">
             <div class="dropdown">
-                <button class="dropbtn" th:text="${current_user.username}">
+                <button class="dropbtn"
+                        th:text="(${current_user == null} ? 'Welcome visitor!' : ${current_user.username})">
                     Dropdown
                 </button>
                 <div class="dropdown-content">
-                    <a th:if="${current_user.username == 'Welcome visitor!'}" th:href="@{/login}">Login</a>
-                    <a th:if="${current_user.username == 'Welcome visitor!'}" th:href="@{/register}">Register</a>
-                    <a th:if="${current_user.username != 'Welcome visitor!'}" th:href="@{/myaccount}">Account
-                        settings</a>
-                    <a th:if="${current_user.username != 'Welcome visitor!'}" th:href="@{/myponds}">My ponds</a>
-                    <a th:if="${current_user.username != 'Welcome visitor!'}" th:href="@{/logout}">Log out</a>
+                    <a th:if="${current_user == null}" th:href="@{/login}">Login</a>
+                    <a th:if="${current_user == null}" th:href="@{/register}">Register</a>
+                    <a th:if="${current_user != null}" th:href="@{/myaccount}">Account settings</a>
+                    <a th:if="${current_user != null}" th:href="@{/myponds}">My ponds</a>
+                    <a th:if="${current_user != null}" th:href="@{/logout}">Log out</a>
                 </div>
             </div>
         </div>
@@ -27,24 +27,20 @@
         </div>
     </div>
     <div class="page-breaker-span"></div>
-    <nav id="page-nav" th:replace="fragments/standard-fragment.html :: page-nav-fragment"></nav>
+    <nav id="page-nav">
+        <ul>
+            <li><a th:href="@{/}"><span id="nav-span-is-selected"><b>Home</b></span></a></li>
+            <li><a th:href="@{/about}"><span><b>About</b></span></a></li>
+            <li><a th:href="@{/ponds}"><span><b>Ponds</b></span></a></li>
+            <li><a th:href="@{/contact}"><span><b>Contact</b></span></a></li>
+        </ul>
+    </nav>
 </div>
 <div class="page-breaker-span" style="width: 90%;"></div>
 
 <div id="page-body">
 
 
-    <div th:if="${site_updates != null}" class="my-centered-container">
-        <div class="my-container" th:each="update : ${site_updates}" th:if="${update.isHidden == 0}">
-            <div class="my-container-update" th:text="${update.updateText}">
-                test
-            </div>
-            <div class="page-breaker-span"></div>
-            <div class="my-container-update-date" th:text="${update.date}">
-                test date
-            </div>
-        </div>
-    </div>
 
 
 </div>

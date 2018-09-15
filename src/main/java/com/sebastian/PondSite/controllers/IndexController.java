@@ -20,7 +20,7 @@ public class IndexController {
     @GetMapping("/")
     public String getIndexPage(Model model) {
         model.addAttribute("page_title", "Home Page");
-        model.addAttribute("current_user", new User("Welcome visitor!", null, null));
+        model.addAttribute("current_user", null);
         model.addAttribute("site_updates", newsService.getAllNews());
         model.addAttribute("newUpdate", new News());
         return "index";

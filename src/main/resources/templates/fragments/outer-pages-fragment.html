@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="page-head-fragment">
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/stylesheet.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/nav.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/dropDownMenu.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/pageFooter.css}"/>
+</head>
+<body>
+
+<div id="page-top">
+    <nav id="page-nav" th:fragment="page-nav-fragment">
+        <ul>
+            <li><a th:href="@{/}"><span><b>Home</b></span></a></li>
+            <li><a th:href="@{/about}"><span><b>About</b></span></a></li>
+            <li><a th:href="@{/ponds}"><span><b>Ponds</b></span></a></li>
+            <li><a th:href="@{/contact}"><span><b>Contact</b></span></a></li>
+        </ul>
+    </nav>
+</div>
+
+</body>
+</html>
