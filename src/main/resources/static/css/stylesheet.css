@@ -47,17 +47,45 @@ body {
     padding: 10px;
 }
 
-#page-footer {
-    margin: 0 auto;
-    height: 80px;
-    background: #cecece;
-    padding: 10px;
-    width: calc(90% - 20px);
-}
-
 .page-breaker-span {
     height: 4px;
     margin: 0 auto;
     background: #cecece;
     width: 100%;
 }
+
+.my-centered-container {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.my-container {
+    border: 1px solid #cecece;
+    width: calc(50% - 46px);
+    margin: 10px 20px;
+    display: inline-block;
+}
+
+.my-container > .my-container-update {
+    padding: 5px;
+}
+
+.my-container > .my-container-update-date {
+    text-align: right;
+    padding: 2px 10px 2px 0;
+    color: rgba(0, 0, 0, 0.5);
+    font-style: italic;
+}
+
+/*
+
+<div class="my-container">
+        <div class="my-container-update">
+
+        </div>
+        <div class="my-container-update-date">
+
+        </div>
+    </div>
+
+*/

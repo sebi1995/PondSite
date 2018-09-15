@@ -1,43 +1,91 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8"/>
+<head th:include="fragments/standard-fragment.html :: page-head-fragment">
     <title th:text="${page_title}">Title</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/stylesheet.css}"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/nav.css}"/>
 </head>
 <body>
 
 <div id="page-top">
     <div id="page-top-title-wrapper">
         <div id="page-top-signed-in-as">
-            signed in as
+            <div class="dropdown">
+                <button class="dropbtn" th:text="${current_user.username}">
+                    Dropdown
+                </button>
+                <div class="dropdown-content">
+                    <a th:if="${current_user.username == 'Welcome visitor!'}" th:href="@{/login}">Login</a>
+                    <a th:if="${current_user.username == 'Welcome visitor!'}" th:href="@{/register}">Register</a>
+                    <a th:if="${current_user.username != 'Welcome visitor!'}" th:href="@{/myaccount}">Account
+                        settings</a>
+                    <a th:if="${current_user.username != 'Welcome visitor!'}" th:href="@{/myponds}">My ponds</a>
+                    <a th:if="${current_user.username != 'Welcome visitor!'}" th:href="@{/logout}">Log out</a>
+                </div>
+            </div>
         </div>
         <div id="page-top-title" th:text="${page_title}">
             page title
         </div>
     </div>
     <div class="page-breaker-span"></div>
-    <nav id="page-nav">
-        <ul>
-            <li><a th:href="@{/}"><span id="nav-span-is-selected"><b>Home</b></span></a></li>
-            <li><a th:href="@{/about}"><span><b>About</b></span></a></li>
-            <li><a th:href="@{/ponds}"><span><b>Ponds</b></span></a></li>
-            <li><a th:href="@{/contact}"><span><b>Contact</b></span></a></li>
-        </ul>
-    </nav>
+    <nav id="page-nav" th:replace="fragments/standard-fragment.html :: page-nav-fragment"></nav>
 </div>
 <div class="page-breaker-span" style="width: 90%;"></div>
 
 <div id="page-body">
-    <div>daw</div>
+
+
+    <div th:if="${site_updates != null}" class="my-centered-container">
+        <div class="my-container" th:each="update : ${site_updates}" th:if="${update.isHidden == 0}">
+            <div class="my-container-update" th:text="${update.updateText}">
+                test
+            </div>
+            <div class="page-breaker-span"></div>
+            <div class="my-container-update-date" th:text="${update.date}">
+                test date
+            </div>
+        </div>
+    </div>
+
+
 </div>
 
 <div class="page-breaker-span" style="width: 90%;"></div>
-<footer id="page-footer">
-    this is the footer
-</footer>
-
+<footer id="page-footer" th:replace="fragments/standard-fragment.html :: page-footer-fragment"></footer>
 
 </body>
 </html>
+
+
+<!--
+
+
+<table>
+        <tr>
+            <td>Update text</td>
+            <td>Date</td>
+        </tr>
+        <th:block th:each="update : ${site_updates}">
+            <tr th:if="${update.isHidden ==0}">
+                <td th:text="${update.updateText}">text</td>
+                <td th:text="${update.date}">date</td>
+            </tr>
+        </th:block>
+    </table>
+
+    <form action="#" th:action="@{/createupdate}" th:object="${newUpdate}" method="post">
+        <label>
+            text:
+            <input type="text" th:field="*{updateText}"/>
+        </label>
+        <label>
+            date:
+            <input type="text" th:field="*{date}"/>
+        </label>
+        <input type="submit" value="Submit"/>
+        <input type="reset" value="Reset"/>
+
+    </form>
+
+
+
+-->

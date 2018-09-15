@@ -3,7 +3,7 @@ package com.sebastian.PondSite.entities;
 import javax.persistence.*;
 
 @Entity
-public class SiteUpdate {
+public class News {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,11 +18,11 @@ public class SiteUpdate {
     @Column
     private Integer isHidden;
 
-    public SiteUpdate() {
+    public News() {
 
     }
 
-    public SiteUpdate(String updateText, String date, Integer isHidden) {
+    public News(String updateText, String date, Integer isHidden) {
         this.updateText = updateText;
         this.date = date;
         this.isHidden = isHidden;

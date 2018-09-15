@@ -1,6 +1,5 @@
 package com.sebastian.PondSite.services;
 
-import com.sebastian.PondSite.entities.PondImage;
 import com.sebastian.PondSite.entities.Pond;
 import com.sebastian.PondSite.repositories.PondRepository;
 import org.springframework.beans.factory.annotation.Autowired;

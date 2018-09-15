@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="page-head-fragment">
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/stylesheet.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/nav.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/dropDownMenu.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/pageFooter.css}"/>
+</head>
+<body>
+
+<div id="page-top">
+    <nav id="page-nav" th:fragment="page-nav-fragment">
+        <ul>
+            <li><a th:href="@{/}"><span id="nav-span-is-selected"><b>Home</b></span></a></li>
+            <li><a th:href="@{/about}"><span><b>About</b></span></a></li>
+            <li><a th:href="@{/ponds}"><span><b>Ponds</b></span></a></li>
+            <li><a th:href="@{/contact}"><span><b>Contact</b></span></a></li>
+        </ul>
+    </nav>
+</div>
+
+<footer id="page-footer" th:fragment="page-footer-fragment">
+    <div id="page-footer-left-side">
+        Navigations
+        <div class="page-breaker-span" style="background: #000; height: 1px;"></div>
+        <ol id="page-footer-left-side-nav-ol">
+            <li><a th:href="@{/updates}">Updates</a></li>
+            <li><a th:href="@{/ponds}">Ponds</a></li>
+            <li><a th:href="@{/contact}">Contact us</a></li>
+        </ol>
+    </div>
+    <div id="page-footer-right-side">
+        <div id="page-footer-right-side-line">
+
+        </div>
+        <div id="page-footer-right-side-container">
+            This is the mother fucking copyright part of the page where you will not take the fame fucktard
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>
